@@ -1,9 +1,9 @@
 /// Generated file. Do not edit.
 ///
 /// Locales: 2
-/// Strings: 38 (19 per locale)
+/// Strings: 40 (20 per locale)
 ///
-/// Built on 2023-04-06 at 07:20 UTC
+/// Built on 2023-04-06 at 09:09 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -151,6 +151,7 @@ class _StringsEn implements BaseTranslations<AppLocale, _StringsEn> {
 	late final _StringsHomepageEn homepage = _StringsHomepageEn._(_root);
 	late final _StringsNavbarEn navbar = _StringsNavbarEn._(_root);
 	late final _StringsSettingsEn settings = _StringsSettingsEn._(_root);
+	late final _StringsTimetableEn timetable = _StringsTimetableEn._(_root);
 }
 
 // Path: eventcard
@@ -208,6 +209,16 @@ class _StringsSettingsEn {
 	String get static_color_picker => 'Accent colors';
 }
 
+// Path: timetable
+class _StringsTimetableEn {
+	_StringsTimetableEn._(this._root);
+
+	final _StringsEn _root; // ignore: unused_field
+
+	// Translations
+	String get events_on_selected_day => 'Events on selected day';
+}
+
 // Path: <root>
 class _StringsRu implements _StringsEn {
 
@@ -237,6 +248,7 @@ class _StringsRu implements _StringsEn {
 	@override late final _StringsHomepageRu homepage = _StringsHomepageRu._(_root);
 	@override late final _StringsNavbarRu navbar = _StringsNavbarRu._(_root);
 	@override late final _StringsSettingsRu settings = _StringsSettingsRu._(_root);
+	@override late final _StringsTimetableRu timetable = _StringsTimetableRu._(_root);
 }
 
 // Path: eventcard
@@ -294,6 +306,16 @@ class _StringsSettingsRu implements _StringsSettingsEn {
 	@override String get static_color_picker => 'Акцентные цвета';
 }
 
+// Path: timetable
+class _StringsTimetableRu implements _StringsTimetableEn {
+	_StringsTimetableRu._(this._root);
+
+	@override final _StringsRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get events_on_selected_day => 'Занятия в выбранный день';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -319,6 +341,7 @@ extension on _StringsEn {
 			case 'settings.dynamic_color': return 'Dynamic';
 			case 'settings.static_color': return 'Static';
 			case 'settings.static_color_picker': return 'Accent colors';
+			case 'timetable.events_on_selected_day': return 'Events on selected day';
 			default: return null;
 		}
 	}
@@ -346,6 +369,7 @@ extension on _StringsRu {
 			case 'settings.dynamic_color': return 'Динамические';
 			case 'settings.static_color': return 'Статические';
 			case 'settings.static_color_picker': return 'Акцентные цвета';
+			case 'timetable.events_on_selected_day': return 'Занятия в выбранный день';
 			default: return null;
 		}
 	}

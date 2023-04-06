@@ -15,3 +15,4 @@ const List<Color> staticColorAccent = [
 const Color appColor = Colors.indigo;
 
 const double maxWidthForPhoneLayout = 600;
+const double minWidthForRailExtend = 1000;

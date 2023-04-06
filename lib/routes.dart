@@ -74,24 +74,37 @@ final router = GoRouter(
                       ),
                       child: NavigationRail(
                         groupAlignment: 0,
-                        extended: true,
+                        labelType: constraints.maxWidth >= minWidthForRailExtend
+                            ? NavigationRailLabelType.all
+                            : NavigationRailLabelType.none,
+                        // extended:
+                        //     constraints.maxWidth >= minWidthForRailExtend,
                         selectedIndex: _controller.page(),
 
                         destinations: [
                           NavigationRailDestination(
                             selectedIcon: const Icon(Icons.home),
                             icon: const Icon(Icons.home_outlined),
-                            label: Text(t.navbar.homepage),
+                            label: Text(
+                              t.navbar.homepage,
+                              style: context.textTheme.labelLarge,
+                            ),
                           ),
                           NavigationRailDestination(
                             selectedIcon: const Icon(Icons.calendar_month),
                             icon: const Icon(Icons.calendar_month_outlined),
-                            label: Text(t.navbar.timetable),
+                            label: Text(
+                              t.navbar.timetable,
+                              style: context.textTheme.labelLarge,
+                            ),
                           ),
                           NavigationRailDestination(
                             selectedIcon: const Icon(Icons.person_2),
                             icon: const Icon(Icons.person_2_outlined),
-                            label: Text(t.navbar.profile),
+                            label: Text(
+                              t.navbar.profile,
+                              style: context.textTheme.labelLarge,
+                            ),
                           )
                         ],
                         // Используем context.go для перехода к нужному маршруту при нажатии на вкладку

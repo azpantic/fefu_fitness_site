@@ -57,7 +57,6 @@ class HomePagePhoneLayout extends StatelessWidget {
         padding: const EdgeInsets.only(
           left: appPadding,
           right: appPadding,
-          top: appPadding,
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -81,6 +80,9 @@ class HomePagePhoneLayout extends StatelessWidget {
                 couchName: "Кердун Юлия Олеговна",
                 eventBeginEndTime: "14:00 - 16:00",
                 eventStatus: t.eventcard.booked_event_status,
+                tap: () {},
+                bgColor: Theme.of(context).colorScheme.background,
+                textColor: Theme.of(context).colorScheme.onBackground,
               ),
             ],
           ),

@@ -1,3 +1,4 @@
+import 'package:fefu_fitness_site/controllers/timetable_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -10,7 +11,9 @@ import 'routes.dart';
 
 Future<void> main() async {
   final mainController = await initMainController();
+  final timetableController = TimetableController();
   Get.put(mainController, permanent: true);
+  Get.put(timetableController, permanent: true);
 
   WidgetsFlutterBinding.ensureInitialized();
   // settingsData!.lang == null
