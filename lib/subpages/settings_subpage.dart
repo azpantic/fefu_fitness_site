@@ -13,8 +13,8 @@ class SettingsSubpage extends GetView<MainController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
         title: Text(t.settings.title),
-        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Column(

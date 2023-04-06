@@ -46,6 +46,8 @@ dependencies:
   flutter_adaptive_scaffold: ^0.1.2
   table_calendar: ^3.0.9
   flutter_rating_bar: ^4.0.1
+  http: ^0.13.5
+  email_validator: ^2.1.17
 
 dev_dependencies:
   flutter_test:

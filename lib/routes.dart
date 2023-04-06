@@ -1,4 +1,5 @@
 import 'package:fefu_fitness_site/constans.dart';
+import 'package:fefu_fitness_site/pages/authorization/login_page.dart';
 import 'package:fefu_fitness_site/pages/timetable_page.dart';
 import 'package:fefu_fitness_site/subpages/settings_subpage.dart';
 import 'package:flutter/material.dart';
@@ -138,7 +139,9 @@ final router = GoRouter(
           path: '/home',
           pageBuilder: (context, state) => NoTransitionPage<void>(
             key: state.pageKey,
-            child: HomePage(),
+            child: LoginPage(
+              title: 'a',
+            ),
           ),
           routes: [],
         ),
