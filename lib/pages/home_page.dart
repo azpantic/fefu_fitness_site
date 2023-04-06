@@ -1,6 +1,6 @@
 import 'package:fefu_fitness_site/constans.dart';
 import 'package:fefu_fitness_site/i18n/strings.g.dart';
-import 'package:fefu_fitness_site/widgets/home_page/event_card.dart';
+import 'package:fefu_fitness_site/widgets/event_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
