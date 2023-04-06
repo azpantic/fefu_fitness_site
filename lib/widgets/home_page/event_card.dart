@@ -1,58 +1,63 @@
+import 'package:fefu_fitness_site/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class EventCard extends GetView<void> {
   const EventCard(
-      this.text1, this.text2, this.text3, this.text4, this.text5, this.text6,
-      {super.key});
+      {super.key,
+      required this.eventName,
+      required this.couchName,
+      required this.locationName,
+      required this.eventBeginEndTime,
+      required this.eventStatus});
 
-  final String text1;
-  final String text2;
-  final String text3;
-  final String text4;
-  final String text5;
-  final String text6;
+  final String eventName;
+  final String couchName;
+  final String locationName;
+  final String eventBeginEndTime;
+  final String eventStatus;
 
   @override
   Widget build(BuildContext context) {
-    return InkResponse(
-      onTap: () {},
-      child: Card(
-        elevation: 4,
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(appRoundRadius),
+      ),
+      elevation: 5,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(appRoundRadius),
+        onTap: () {},
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(appPadding * 2),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        text1,
-                        style: context.textTheme.headlineSmall,
+              Padding(
+                padding: const EdgeInsets.only(bottom: appPadding),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        eventName,
+                        style: context.textTheme.titleMedium
+                            ?.copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Text(text2)
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        text3,
-                        style: context.textTheme.headlineSmall,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: appPadding, right: appPadding),
+                      child: Text(
+                        eventBeginEndTime,
                       ),
-                      Text(text4)
-                    ],
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
               Row(
                 children: [
-                  Icon(Icons.person),
-                  Text(text5),
+                  const Icon(Icons.person),
+                  Text(couchName),
                 ],
               ),
               Row(
@@ -61,14 +66,10 @@ class EventCard extends GetView<void> {
                   Row(
                     children: [
                       const Icon(Icons.location_on),
-                      const SizedBox(width: 8),
-                      Text(
-                        text6,
-                        style: context.textTheme.titleLarge,
-                      ),
+                      Text(locationName),
                     ],
                   ),
-                  Text('Оплачено', style: context.textTheme.titleLarge)
+                  Text(eventStatus, style: context.textTheme.titleLarge)
                 ],
               ),
             ],

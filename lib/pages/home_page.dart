@@ -54,7 +54,11 @@ class HomePagePhoneLayout extends StatelessWidget {
         title: Text(t.navbar.homepage),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(appPadding),
+        padding: const EdgeInsets.only(
+          left: appPadding,
+          right: appPadding,
+          top: appPadding,
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -71,7 +75,13 @@ class HomePagePhoneLayout extends StatelessWidget {
                 t.homepage.nearest_booking,
                 style: Get.textTheme.headlineLarge,
               ),
-              EventCard("1", "2", "3", "4", "5", "6"),
+              EventCard(
+                eventName: "Групповое занятие по аэробике",
+                locationName: "Корпус S",
+                couchName: "Кердун Юлия Олеговна",
+                eventBeginEndTime: "14:00 - 16:00",
+                eventStatus: t.eventcard.booked_event_status,
+              ),
             ],
           ),
         ),
