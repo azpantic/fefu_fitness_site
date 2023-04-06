@@ -64,43 +64,56 @@ final router = GoRouter(
             }
 
             return Obx(
-              () => Row(
-                children: [
-                  NavigationRail(
-                    groupAlignment: 0,
-                    elevation: 5,
-                    minWidth: 100,
-                    extended: true,
-                    // labelType: NavigationRailLabelType.all,
-                    selectedIndex: _controller.page(),
+              () => Scaffold(
+                body: Row(
+                  children: [
+                    Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(appRoundRadius),
+                      ),
+                      child: NavigationRail(
+                        groupAlignment: 0,
+                        extended: true,
+                        selectedIndex: _controller.page(),
 
-                    destinations: [
-                      NavigationRailDestination(
-                        selectedIcon: const Icon(Icons.home),
-                        icon: const Icon(Icons.home_outlined),
-                        label: Text(t.navbar.homepage),
+                        destinations: [
+                          NavigationRailDestination(
+                            selectedIcon: const Icon(Icons.home),
+                            icon: const Icon(Icons.home_outlined),
+                            label: Text(t.navbar.homepage),
+                          ),
+                          NavigationRailDestination(
+                            selectedIcon: const Icon(Icons.calendar_month),
+                            icon: const Icon(Icons.calendar_month_outlined),
+                            label: Text(t.navbar.timetable),
+                          ),
+                          NavigationRailDestination(
+                            selectedIcon: const Icon(Icons.person_2),
+                            icon: const Icon(Icons.person_2_outlined),
+                            label: Text(t.navbar.profile),
+                          )
+                        ],
+                        // Используем context.go для перехода к нужному маршруту при нажатии на вкладку
+                        onDestinationSelected: (index) {
+                          _controller.page(index);
+                          return context.go(
+                            ['/home', '/timetable', '/profile'][index],
+                          );
+                        },
                       ),
-                      NavigationRailDestination(
-                        selectedIcon: const Icon(Icons.calendar_month),
-                        icon: const Icon(Icons.calendar_month_outlined),
-                        label: Text(t.navbar.timetable),
+                    ),
+                    Expanded(
+                      child: Card(
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(appRoundRadius),
+                        ),
+                        child: child,
                       ),
-                      NavigationRailDestination(
-                        selectedIcon: const Icon(Icons.person_2),
-                        icon: const Icon(Icons.person_2_outlined),
-                        label: Text(t.navbar.profile),
-                      )
-                    ],
-                    // Используем context.go для перехода к нужному маршруту при нажатии на вкладку
-                    onDestinationSelected: (index) {
-                      _controller.page(index);
-                      return context.go(
-                        ['/home', '/timetable', '/profile'][index],
-                      );
-                    },
-                  ),
-                  Expanded(child: child),
-                ],
+                    ),
+                  ],
+                ),
               ),
             );
           },

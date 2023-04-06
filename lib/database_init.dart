@@ -9,7 +9,7 @@ Future<MainController> initMainController() async {
   MainController controller = MainController();
 
   if (kIsWeb) {
-    controller.isDarkMode(true);
+    controller.isDarkMode(false);
     controller.isSystemTheme(false);
 
     controller.colorSeed(appColor);

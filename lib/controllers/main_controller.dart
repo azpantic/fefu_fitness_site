@@ -6,7 +6,7 @@ import 'package:isar/isar.dart';
 class MainController extends GetxController {
   RxInt page = 0.obs;
 
-  RxBool isDarkMode = true.obs;
+  RxBool isDarkMode = false.obs;
   RxBool isSystemTheme = false.obs;
 
   RxBool isStaticColor = true.obs;

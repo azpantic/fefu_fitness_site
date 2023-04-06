@@ -1,9 +1,9 @@
 /// Generated file. Do not edit.
 ///
 /// Locales: 2
-/// Strings: 32 (16 per locale)
+/// Strings: 34 (17 per locale)
 ///
-/// Built on 2023-04-05 at 12:58 UTC
+/// Built on 2023-04-06 at 03:48 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -147,8 +147,19 @@ class _StringsEn implements BaseTranslations<AppLocale, _StringsEn> {
 	late final _StringsEn _root = this; // ignore: unused_field
 
 	// Translations
+	late final _StringsHomepageEn homepage = _StringsHomepageEn._(_root);
 	late final _StringsNavbarEn navbar = _StringsNavbarEn._(_root);
 	late final _StringsSettingsEn settings = _StringsSettingsEn._(_root);
+}
+
+// Path: homepage
+class _StringsHomepageEn {
+	_StringsHomepageEn._(this._root);
+
+	final _StringsEn _root; // ignore: unused_field
+
+	// Translations
+	String get nearest_booking => 'Nearest Booking';
 }
 
 // Path: navbar
@@ -210,8 +221,19 @@ class _StringsRu implements _StringsEn {
 	@override late final _StringsRu _root = this; // ignore: unused_field
 
 	// Translations
+	@override late final _StringsHomepageRu homepage = _StringsHomepageRu._(_root);
 	@override late final _StringsNavbarRu navbar = _StringsNavbarRu._(_root);
 	@override late final _StringsSettingsRu settings = _StringsSettingsRu._(_root);
+}
+
+// Path: homepage
+class _StringsHomepageRu implements _StringsHomepageEn {
+	_StringsHomepageRu._(this._root);
+
+	@override final _StringsRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get nearest_booking => 'Ближайшая запись';
 }
 
 // Path: navbar
@@ -254,6 +276,7 @@ class _StringsSettingsRu implements _StringsSettingsEn {
 extension on _StringsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
+			case 'homepage.nearest_booking': return 'Nearest Booking';
 			case 'navbar.homepage': return 'Home';
 			case 'navbar.timetable': return 'timetable';
 			case 'navbar.castompage': return 'CastomPage';
@@ -278,6 +301,7 @@ extension on _StringsEn {
 extension on _StringsRu {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
+			case 'homepage.nearest_booking': return 'Ближайшая запись';
 			case 'navbar.homepage': return 'Главная';
 			case 'navbar.timetable': return 'Расписание';
 			case 'navbar.castompage': return 'Кастомная';
